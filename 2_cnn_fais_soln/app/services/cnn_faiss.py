@@ -12,6 +12,7 @@ class CNNFaissSearch:
     async def search_image(self, image: Image.Image, top_k: int) -> List[SearchResultItem]:
         emb = self.extract_embedding(image)
         indices, scores = self.search(self.index, emb, top_k)
+        print(f"Len of indices{len(indices)}")
         results = []
         for idx, score in zip(indices, scores):
             # Query embedding metadata by index or image_id
