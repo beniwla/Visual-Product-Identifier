@@ -23,7 +23,7 @@ preprocess = transforms.Compose([
     )
 ])
 
-def extract_embedding(image: Image.Image) -> np.ndarray:
+def extract_cnn_embedding(image: Image.Image) -> np.ndarray:
     """
     Extract a normalized 2048-dim embedding from a PIL image.
     """

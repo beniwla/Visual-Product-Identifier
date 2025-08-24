@@ -4,10 +4,10 @@ import secrets
 from fastapi import UploadFile, HTTPException
 from PIL import Image
 from bson import ObjectId
-from app.model import extract_embedding, extract_clip_embedding
+from app.model import extract_cnn_embedding, extract_clip_embedding
 from app.db.mongo import products_col, embedding_cnn_faiss_metadata_col, embedding_clip_faiss_metadata_col
 from app.search import save_index
-from app.config import SHOE_IMAGES_FOLDER, FAISS_INDEX_PATH, CLIP_FAISS_INDEX_PATH
+from app.config import SHOE_IMAGES_FOLDER, CNN_FAISS_INDEX_PATH, CLIP_FAISS_INDEX_PATH
 
 class AddController:
     def __init__(
@@ -17,14 +17,14 @@ class AddController:
     ):
         self.faiss_cnn_index = faiss_cnn_index
         self.faiss_clip_index = faiss_clip_index
-        self.extract_embedding = extract_embedding
+        self.extract_embedding = extract_cnn_embedding
         self.extract_clip_embedding = extract_clip_embedding
         self.save_index = save_index
         self.images_folder = SHOE_IMAGES_FOLDER  # e.g. "../data/shoe_images"
         self.products_col = products_col
         self.embedding_cnn_faiss_metadata_col = embedding_cnn_faiss_metadata_col
         self.embedding_clip_faiss_metadata_col = embedding_clip_faiss_metadata_col
-        self.faiss_cnn_index_path = FAISS_INDEX_PATH
+        self.faiss_cnn_index_path = CNN_FAISS_INDEX_PATH
         self.faiss_clip_index_path = CLIP_FAISS_INDEX_PATH
         self.embedding_metadata = []  # Initialize or load from file if needed
 

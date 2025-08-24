@@ -2,8 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from app.config import SHOE_IMAGES_FOLDER, FAISS_INDEX_PATH, CLIP_FAISS_INDEX_PATH
-from app.model import extract_embedding, extract_clip_embedding
+from app.config import SHOE_IMAGES_FOLDER, CNN_FAISS_INDEX_PATH, CLIP_FAISS_INDEX_PATH
+from app.model import extract_cnn_embedding, extract_clip_embedding
 from app.search import load_index, load_embedding_metadata, save_index, search, load_product_metadata
 
 from app.services.cnn_faiss import CNNFaissSearch
@@ -27,20 +27,20 @@ app.add_middleware(
 )
 
 # Load FAISS index and embedding metadata
-index = load_index(FAISS_INDEX_PATH)
+cnn_index = load_index(CNN_FAISS_INDEX_PATH)
 clip_index = load_index(CLIP_FAISS_INDEX_PATH)
 
 # Mount static files for images
 app.mount("/images", StaticFiles(directory=SHOE_IMAGES_FOLDER), name="images")
 
 # Initialize services and controllers
-cnn_faiss_service = CNNFaissSearch(index, extract_embedding, search)
+cnn_faiss_service = CNNFaissSearch(cnn_index, extract_cnn_embedding, search)
 clip_faiss_service = CLIPFaissSearch(clip_index, extract_clip_embedding, search)
 
 search_controller = SearchController(cnn_faiss_service, clip_faiss_service)
 products_controller = ProductsController()
 add_controller = AddController(
-    faiss_cnn_index=index, 
+    faiss_cnn_index=cnn_index, 
     faiss_clip_index = clip_index
 )
 

@@ -2,19 +2,14 @@ import json
 import numpy as np
 from pathlib import Path
 from PIL import Image
-import cv2
-from sklearn.cluster import MiniBatchKMeans
-import pickle
 from app.db.mongo import embedding_cnn_faiss_metadata_col, embedding_clip_faiss_metadata_col, products_col
-from app.model import extract_embedding, extract_clip_embedding
+from app.model import extract_cnn_embedding, extract_clip_embedding
 from app.search import build_faiss_index, save_index
 from app.config import (
-    FAISS_INDEX_PATH,
-    FAISS_HYBRID_INDEX_PATH,
+    CNN_FAISS_INDEX_PATH,
     IMAGE_PATHS_JSON,
     SHOE_IMAGES_FOLDER,
-    KMEANS_MODEL_PATH,
-    SHOE_PRODUCT_JSON_PATH, 
+    SHOE_PRODUCT_JSON_PATH,
     CLIP_FAISS_INDEX_PATH
 )
 import time
@@ -185,7 +180,7 @@ def build_cnn_faiss_index():
 
             try:
                 image = Image.open(image_file_path).convert("RGB")
-                emb = extract_embedding(image)
+                emb = extract_cnn_embedding(image)
                 batch_embeddings.append(emb)
 
                 batch_metadata_docs.append({
@@ -225,11 +220,11 @@ def build_cnn_faiss_index():
     embeddings_np = np.stack(all_embeddings).astype("float32")
 
     index = build_faiss_index(embeddings_np)
-    save_index(index, FAISS_INDEX_PATH)
+    save_index(index, CNN_FAISS_INDEX_PATH)
 
     embedding_cnn_faiss_metadata_col.create_index("faiss_index")
 
-    print(f"CNN FAISS index saved to {FAISS_INDEX_PATH} with {len(all_embeddings)} embeddings.")
+    print(f"CNN FAISS index saved to {CNN_FAISS_INDEX_PATH} with {len(all_embeddings)} embeddings.")
 
     # Write timing info to log file
     with open(LOG_FILE_PATH, "w") as log_file:

@@ -135,3 +135,8 @@ webcolors==24.11.1
 webencodings==0.5.1
 websocket-client==1.8.0
 zipp==3.21.0
+
+
+# ERROR: Ignored the following versions that require a different python version: 1.21.2 Requires-Python >=3.7,<3.11; 1.21.3 Requires-Python >=3.7,<3.11; 1.21.4 Requires-Python >=3.7,<3.11; 1.21.5 Requires-Python >=3.7,<3.11; 1.21.6 Requires-Python >=3.7,<3.11; 1.26.0 Requires-Python >=3.9,<3.13; 1.26.1 Requires-Python >=3.9,<3.13
+# ERROR: Could not find a version that satisfies the requirement nvidia-nccl-cu12==2.21.5 (from versions: 0.0.1.dev5)
+# ERROR: No matching distribution found for nvidia-nccl-cu12==2.21.5
