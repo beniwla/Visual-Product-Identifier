@@ -106,7 +106,7 @@ terminado==0.18.1
 tinycss2==1.4.0
 tomli==2.2.1
 torch==2.8.0+cpu
-torchvision==0.21.0+cpu
+torchvision==0.15.1+cpu
 --extra-index-url https://download.pytorch.org/whl/cpu
 git+https://github.com/openai/CLIP.git
 tornado==6.4.2
