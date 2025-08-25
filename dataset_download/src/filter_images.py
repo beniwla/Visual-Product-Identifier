@@ -40,7 +40,7 @@ print(f"Total unique shoe images to download: {len(required_images)}")
 image_copy_info = []
 total_images = len(required_images)
 
-source_folder = '../../data/images/small'  # Folder where all images are downloaded already
+source_folder = '../../data/all_images/images/small'  # Folder where all images are downloaded already
 target_folder = '../../data/shoe_images'       # Folder to copy required images into
 os.makedirs(target_folder, exist_ok=True)
 

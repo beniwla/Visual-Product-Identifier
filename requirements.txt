@@ -105,8 +105,9 @@ sympy==1.13.1
 terminado==0.18.1
 tinycss2==1.4.0
 tomli==2.2.1
-torch==2.6.0
-torchvision==0.21.0
+torch==2.2.0+cpu
+torchvision==0.17.0+cpu
+git+https://github.com/openai/CLIP.git
 tornado==6.4.2
 traitlets==5.14.3
 triton==3.2.0
@@ -122,6 +123,8 @@ webcolors==24.11.1
 webencodings==0.5.1
 websocket-client==1.8.0
 zipp==3.21.0
+pymongo
+
 
 
 # ERROR: Ignored the following versions that require a different python version: 1.21.2 Requires-Python >=3.7,<3.11; 1.21.3 Requires-Python >=3.7,<3.11; 1.21.4 Requires-Python >=3.7,<3.11; 1.21.5 Requires-Python >=3.7,<3.11; 1.21.6 Requires-Python >=3.7,<3.11; 1.26.0 Requires-Python >=3.9,<3.13; 1.26.1 Requires-Python >=3.9,<3.13

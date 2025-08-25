@@ -32,7 +32,7 @@ for filename in sorted(os.listdir(metadata_dir)):
 
 print(f"Found {len(shoe_products)} shoe products.")
 
-half_length = len(shoe_products) // 2
+half_length = len(shoe_products) // 20
 shoe_products_half = shoe_products[:half_length]
 
 with open('../../data/testSet1/limited2_shoe_products.json', 'w') as f:

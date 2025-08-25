@@ -81,7 +81,7 @@ def build_clip_faiss_index():
 
             if not image_file_path.exists():
                 print(f"Image not found: {image_file_path}")
-                continue
+                continue 
 
             try:
                 image = Image.open(image_file_path).convert("RGB")
