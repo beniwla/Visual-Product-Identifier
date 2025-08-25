@@ -8,10 +8,10 @@ import {
   Typography,
 } from "@mui/material";
 
-const apiBaseUrl = process.env.API_BASE_URL;
-
 import SearchResults from "./search_results";
 import SearchMethodSelect from "./search_method_select";  
+
+const apiBaseUrl = process.env.API_BASE_URL;
 function Search() {
   const [file, setFile] = useState(null);
   const [method, setMethod] = useState("cnn_faiss");  

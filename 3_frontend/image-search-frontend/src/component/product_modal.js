@@ -9,13 +9,13 @@ import {
 } from "@mui/material";
 import axios from "axios";
 
-const apiBaseUrl = process.env.API_BASE_URL;
-
 // import LanguageSelector from "./product_modal/language_selector";
 import MainImage from "./product_modal/main_image";
 import ProductName from "./product_modal/product_name";
 import ProductType from "./product_modal/product_type";
 import OtherImages from "./product_modal/other_images";
+
+const apiBaseUrl = process.env.API_BASE_URL;
 
 const IMAGE_BASE_URL = `${apiBaseUrl}/images/`;
 
