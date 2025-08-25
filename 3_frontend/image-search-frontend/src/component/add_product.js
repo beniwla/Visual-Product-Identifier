@@ -9,6 +9,10 @@ import {
   Grid,
 } from "@mui/material";
 
+
+
+const apiBaseUrl = process.env.API_BASE_URL;
+
 const AddProduct = () => {
   const [itemId, setItemId] = useState("");
   const [productType, setProductType] = useState("");
@@ -66,7 +70,7 @@ const AddProduct = () => {
     setResponse("Uploading...");
 
     try {
-      const res = await fetch("http://localhost:5000/add_product", {
+      const res = await fetch(`${apiBaseUrl}/add_product`, {
         method: "POST",
         body: formData, // Important: do NOT set Content-Type header manually
       });

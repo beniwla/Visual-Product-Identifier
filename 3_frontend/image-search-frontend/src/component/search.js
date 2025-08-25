@@ -8,6 +8,8 @@ import {
   Typography,
 } from "@mui/material";
 
+const apiBaseUrl = process.env.API_BASE_URL;
+
 import SearchResults from "./search_results";
 import SearchMethodSelect from "./search_method_select";  
 function Search() {
@@ -40,7 +42,7 @@ function Search() {
 
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:5000/search/", formData, {
+      const response = await axios.post(`${apiBaseUrl}/search/`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

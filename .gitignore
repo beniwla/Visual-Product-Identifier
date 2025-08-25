@@ -4,7 +4,6 @@ data
 node_modules/
 
 # Ignore Python virtual environments
-asn_env/
 .env/
 *.pyc
 __pycache__/

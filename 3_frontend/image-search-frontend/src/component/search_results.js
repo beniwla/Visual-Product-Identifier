@@ -8,7 +8,8 @@ import {
 } from "@mui/material";
 import ProductModal from "./product_modal";
 
-const IMAGE_BASE_URL = "http://localhost:5000/images/";
+const apiBaseUrl = process.env.API_BASE_URL;
+const IMAGE_BASE_URL = `${apiBaseUrl}/images/`;
 
 export default function SearchResults({ results }) {
   const [open, setOpen] = useState(false);

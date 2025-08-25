@@ -6,3 +6,4 @@ if __name__ == "__main__":
 
     build_cnn_faiss_index()
     build_clip_faiss_index()
+ 
