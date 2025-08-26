@@ -23,7 +23,7 @@ from app.routes import search as search_routes
 from app.routes import products as products_routes
 from app.routes import add as add_routes
 
-app = FastAPI()
+app = FastAPI(root_path="/api")
 
 app.add_middleware(
     CORSMiddleware,
@@ -58,6 +58,6 @@ products_routes.products_controller = products_controller
 add_routes.add_controller = add_controller
 
 # Include routers
-app.include_router(search_routes.router, prefix="/api")
-app.include_router(products_routes.router, prefix="/api")
-app.include_router(add_routes.router, prefix="/api")
+app.include_router(search_routes.router)
+app.include_router(products_routes.router)
+app.include_router(add_routes.router)
