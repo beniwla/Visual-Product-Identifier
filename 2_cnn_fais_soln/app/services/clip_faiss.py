@@ -34,7 +34,7 @@ class CLIPFaissSearch:
                 continue
 
             image_id = embedding_doc.get("image_id")
-            image_path = embedding_doc.get("image_path")
+            image_path = embedding_doc.get("image_path").replace('\\', '/')
             item_id = embedding_doc.get("item_id")
 
             results.append({
