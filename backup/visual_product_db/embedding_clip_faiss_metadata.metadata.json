@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"faiss_index":{"$numberInt":"1"}},"name":"faiss_index_1"}],"uuid":"2bf3f2993e3b4ff8a484c991e91a0170","collectionName":"embedding_clip_faiss_metadata","type":"collection"}

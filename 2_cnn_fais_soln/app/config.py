@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 
 load_dotenv()  # load from .env
 
+MONGO_URI = os.getenv("MONGO_URI")
 SHOE_IMAGES_FOLDER = os.getenv("SHOE_IMAGES_FOLDER")
 TEST_SET_MODIFY_FOLDER= os.getenv("TEST_SET_MODIFY_FOLDER")
 

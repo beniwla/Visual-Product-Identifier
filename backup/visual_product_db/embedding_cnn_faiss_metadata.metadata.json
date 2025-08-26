@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"faiss_index":{"$numberInt":"1"}},"name":"faiss_index_1"}],"uuid":"2d2472fa4d07456f876bf0165a7abb78","collectionName":"embedding_cnn_faiss_metadata","type":"collection"}
