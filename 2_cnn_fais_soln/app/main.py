@@ -38,7 +38,7 @@ cnn_index = load_index(CNN_FAISS_INDEX_PATH)
 clip_index = load_index(CLIP_FAISS_INDEX_PATH)
 
 # Mount static files for images
-app.mount("/images", StaticFiles(directory=SHOE_IMAGES_FOLDER), name="images")
+app.mount("/images", StaticFiles(directory="/home/ec2-user/Visual-Product-Identifier/data/shoe_images"), name="images")
 
 # Initialize services and controllers
 cnn_faiss_service = CNNFaissSearch(cnn_index, extract_cnn_embedding, search)
