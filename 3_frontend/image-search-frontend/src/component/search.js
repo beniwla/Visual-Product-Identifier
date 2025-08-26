@@ -42,7 +42,7 @@ function Search() {
 
     setLoading(true);
     try {
-      const response = await axios.post(`${apiBaseUrl}/search/`, formData, {
+      const response = await axios.post(`http://18.233.248.38/api/search/`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

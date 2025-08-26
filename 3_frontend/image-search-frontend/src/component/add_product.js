@@ -70,7 +70,7 @@ const AddProduct = () => {
     setResponse("Uploading...");
 
     try {
-      const res = await fetch(`${apiBaseUrl}/add_product`, {
+      const res = await fetch(`http://18.233.248.38/api/add_product`, {
         method: "POST",
         body: formData, // Important: do NOT set Content-Type header manually
       });

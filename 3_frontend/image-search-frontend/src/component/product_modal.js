@@ -30,7 +30,7 @@ export default function ProductModal({ open, onClose, itemId }) {
     setProduct(null);
 
     axios
-      .get(`${apiBaseUrl}/products/${itemId}`)
+      .get(`http://18.233.248.38/api/products/${itemId}`)
       .then((res) => setProduct(res.data))
       .catch(() => setProduct({ error: "Product not found" }))
       .finally(() => setLoading(false));

@@ -9,7 +9,7 @@ import {
 import ProductModal from "./product_modal";
 
 const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
-const IMAGE_BASE_URL = `${apiBaseUrl}/images/`;
+const IMAGE_BASE_URL = `http://18.233.248.38/api/images/`;
 
 export default function SearchResults({ results }) {
   const [open, setOpen] = useState(false);
