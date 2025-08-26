@@ -15,7 +15,7 @@ import ProductName from "./product_modal/product_name";
 import ProductType from "./product_modal/product_type";
 import OtherImages from "./product_modal/other_images";
 
-const apiBaseUrl = process.env.API_BASE_URL;
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
 const IMAGE_BASE_URL = `${apiBaseUrl}/images/`;
 

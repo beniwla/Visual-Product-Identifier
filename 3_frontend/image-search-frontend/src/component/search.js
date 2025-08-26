@@ -11,7 +11,7 @@ import {
 import SearchResults from "./search_results";
 import SearchMethodSelect from "./search_method_select";  
 
-const apiBaseUrl = process.env.API_BASE_URL;
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 function Search() {
   const [file, setFile] = useState(null);
   const [method, setMethod] = useState("cnn_faiss");  

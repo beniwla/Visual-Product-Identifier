@@ -11,7 +11,7 @@ import {
 
 
 
-const apiBaseUrl = process.env.API_BASE_URL;
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
 const AddProduct = () => {
   const [itemId, setItemId] = useState("");
