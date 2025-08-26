@@ -20,7 +20,7 @@ class CNNFaissSearch:
             if not embedding_doc:
                 continue
             image_id = embedding_doc["image_id"]
-            image_path = embedding_doc["image_path"]
+            image_path = embedding_doc["image_path"].replace('\\', '/')
             item_id = embedding_doc.get("item_id")
 
             results.append({
